@@ -1,0 +1,40 @@
+from tkinter import *
+def convert(event):
+    value=val.get()
+    value=float(value)
+    gram=value*1000
+    val1.set(gram)
+    pound=value*2.20462
+    val2.set(pound)
+    ounce=value*35.274
+    val3.set(ounce)
+
+root=Tk()
+root.geometry("400x400")
+root.title("weight conversion")
+val=StringVar()
+val.set("")
+val1=StringVar()
+val2=StringVar()
+val3=StringVar()
+l1=Label(root,text="enter the weight in kg",fg="black",bg="yellow",font="lucida 10 bold")
+l1.grid()
+e1=Entry(root,textvariable=val)
+e1.grid(row=0,column=1)
+b=Button(root,text="convert",fg="black",bg="red",font="lucida 10 bold")
+b.grid(row=0,column=2)
+b.bind("<Button>",convert)
+l2=Label(root,text="Gram",fg="black",bg="yellow",font="lucida 10 bold")
+l3=Label(root,text="Pounds",fg="black",bg="yellow",font="lucida 10 bold")
+l4=Label(root,text="Ounce",fg="black",bg="yellow",font="lucida 10 bold")
+l2.grid(row=2,column=0)
+l3.grid(row=2,column=1)
+l4.grid(row=2,column=2)
+e2=Entry(root,textvariable=val1)
+e3=Entry(root,textvariable=val2)
+e4=Entry(root,textvariable=val3)
+e2.grid(row=3,column=0)
+e3.grid(row=3,column=1)
+e4.grid(row=3,column=2)
+
+root.mainloop()
